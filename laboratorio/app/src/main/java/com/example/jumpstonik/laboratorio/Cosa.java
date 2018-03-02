@@ -19,11 +19,13 @@ public class Cosa implements Parcelable{
         this.texto1 = text1;
         this.texto2 = text2;
     }
+    public Cosa(){
+
+    }
 
     protected Cosa(Parcel in) {
-
-        this.texto1 = in.readString();
-        this.texto2 = in.readString();
+        texto1 = in.readString();
+        texto2 = in.readString();
     }
 
     public static final Creator<Cosa> CREATOR = new Creator<Cosa>() {
@@ -53,6 +55,7 @@ public class Cosa implements Parcelable{
         return  this.texto2;
     }
 
+
     @Override
     public int describeContents() {
         return 0;
@@ -60,7 +63,6 @@ public class Cosa implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-
         parcel.writeString(texto1);
         parcel.writeString(texto2);
     }
